@@ -2,21 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './todo/Todo'
 import './TodoList.css';
+import {setAnnouncerEvent} from "../../actions";
 
 
-const TodoList = ({ todos, toggleTodo, deleteTodo }) => (
-  <div className={'wrapper'}>
-    <ul>
-      {todos.map(todo =>
-        <Todo
-          key={todo.id}
-          todo={todo}
-          toggleTodo={() => toggleTodo(todo.id)}
-          deleteTodo={() => deleteTodo(todo.id)}
-        />
-      )}
-    </ul>
-  </div>
+const TodoList = ({todos, toggleTodo, deleteTodo, dispatch}) => (
+    <div className={'wrapper'}>
+      <ul>
+        {todos.map(todo =>
+            <Todo
+                key={todo.id}
+                todo={todo}
+                toggleTodo={() => {
+                  toggleTodo(todo.id)
+                  dispatch(setAnnouncerEvent("Todo's completed property switched successfully!", false))
+                }}
+                deleteTodo={() => {
+                  deleteTodo(todo.id)
+                  dispatch(setAnnouncerEvent("Todo deleted successfully!", false))
+                }}
+            />
+        )}
+      </ul>
+    </div>
 )
 
 TodoList.propTypes = {

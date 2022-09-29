@@ -1,17 +1,26 @@
 import React from 'react'
 import Filter from './footer/Filter'
-import AddTodo from './addTodo/AddTodo'
 import VisibleTodoList from './todoList/VisibleTodoList'
-import EditTodo from "./editTodo/EditTodo";
-import './App.css';
+import FormWrapper from "./formWrappper/FormWrapper"
+import './App.css'
+import {connect} from "react-redux";
+import MiddleBlock from "./middleBlock/MiddleBlock";
 
-const App = () => (
-  <div>
-    <AddTodo />
-    <EditTodo />
-    <Filter />
-    <VisibleTodoList />
-  </div>
+const App = ({visibility}) => (
+    <div>
+      {(visibility) ? <FormWrapper/> : null}
+      <Filter/>
+      <VisibleTodoList/>
+      <MiddleBlock/>
+    </div>
 )
 
-export default App
+const mapStateToProps = state => ({
+  visibility: state.formDisplayer.visibility
+})
+
+
+export default connect(
+    mapStateToProps,
+    undefined
+)(App)

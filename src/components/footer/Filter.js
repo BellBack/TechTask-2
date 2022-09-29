@@ -1,20 +1,20 @@
 import React from 'react'
 import FilterLink from './link/FilterLink'
-import { VisibilityFilters } from '../../actions'
+import {VisibilityFilters} from '../../actions'
 
 const Filter = () => (
-  <div className={'wrapper'}>
-    <span>Show: </span>
-    <FilterLink filter={VisibilityFilters.SHOW_ALL}>
-      All
-    </FilterLink>
-    <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
-      Active
-    </FilterLink>
-    <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
-      Completed
-    </FilterLink>
-  </div>
+    <div className={'wrapper'}>
+      <span>Show: </span>
+      <FilterLink filter={VisibilityFilters.SHOW_ALL}>
+        All
+      </FilterLink>
+      <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
+        Active
+      </FilterLink>
+      <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
+        Completed
+      </FilterLink>
+    </div>
 )
 
 export default Filter

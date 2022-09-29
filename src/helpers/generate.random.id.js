@@ -1,4 +1,4 @@
-export function generateRandomID (length) {
+export function generateRandomID(length) {
   let result = '',
       chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_';
 
