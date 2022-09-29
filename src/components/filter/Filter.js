@@ -1,10 +1,11 @@
 import React from 'react'
 import FilterLink from './link/FilterLink'
 import {VisibilityFilters} from '../../actions'
+import './Filter.css'
 
 const Filter = () => (
-    <div className={'wrapper'}>
-      <span>Show: </span>
+    <div className={'filter'}>
+      <span>Show</span>
       <FilterLink filter={VisibilityFilters.SHOW_ALL}>
         All
       </FilterLink>

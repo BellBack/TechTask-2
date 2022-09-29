@@ -1,9 +1,10 @@
 li{
     display: flex;
-    padding: .5em 1em;
-    background-color: lightblue;
-
+    padding: .5em;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.1);
     border-radius: 0.5em;
+    min-width: 20em;
 }
 li > *:not(:last-child){
     margin-right: 1em;

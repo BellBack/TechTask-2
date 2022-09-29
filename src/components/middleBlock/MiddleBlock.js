@@ -1,16 +1,15 @@
 import React from "react"
 import {connect} from "react-redux";
-import {setAnnouncerEvent, setFormVisible} from "../../actions";
+import {setFormVisible} from "../../actions";
 import './MiddleBlock.css';
 
-const MiddleBlock = ({dispatch, event}) => {
-  let emptyObj = {
+const MiddleBlock = ({onClick, event}) => {
+  let [announcer, setAnnouncer] = React.useState({
     text: 'Init',
     isError: false,
     isVisible: false
-  }
-  let [announcer, setAnnouncer] = React.useState(emptyObj)
-  let [previousEvent, setPreviousEvent] = React.useState({})
+  }),
+      [previousEvent, setPreviousEvent] = React.useState({})
 
   if (event && Object.keys(event).length && JSON.stringify(previousEvent) !== JSON.stringify(event)) {
     setPreviousEvent({
@@ -29,17 +28,17 @@ const MiddleBlock = ({dispatch, event}) => {
         isError: event.isError,
         isVisible: false
       })
-    }, 1500);
+    }, 2000);
   }
 
   return (
-      <div className={'wrapper middle-block'}>
+      <div className={'middle-block'}>
         <div className={'announcer ' +
         ((announcer.isError) ? 'announcer-error ' : 'announcer-success ') +
         ((announcer.isVisible) ? 'visible ' : 'invisible ')
         }
         >{announcer.text}</div>
-        <button onClick={() => dispatch(setFormVisible(null))}>Create todo</button>
+        <button onClick={onClick}>Create todo</button>
       </div>
   )
 }
@@ -50,7 +49,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  dispatch
+  onClick: () => dispatch(setFormVisible(null))
 })
 
 export default connect(

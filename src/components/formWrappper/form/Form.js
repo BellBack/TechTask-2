@@ -3,6 +3,7 @@ import {addTodo, editTodo, setAnnouncerEvent, setFormInvisible} from "../../../a
 import {connect} from "react-redux";
 import {getDatesFromText} from "../../../helpers/get.dates.from.text";
 import {generateRandomID} from "../../../helpers/generate.random.id";
+import './Form.css'
 
 const Form = ({todo, onClick, cancel, dispatch}) => {
   let emptyObj = {
@@ -72,10 +73,12 @@ const Form = ({todo, onClick, cancel, dispatch}) => {
           <option value={'Thought'}>Thought</option>
         </select>
         <textarea value={value.text} name={'text'} placeholder={"Text"} onChange={onChange} required/>
-        <button onClick={cancel}>Cancel</button>
-        <button type="submit">
-          {(!!todo) ? 'Edit todo' : 'Add todo'}
-        </button>
+        <div className={'button-section'}>
+          <button onClick={cancel}>Cancel</button>
+          <button type="submit">
+            {(!!todo) ? 'Edit todo' : 'Add todo'}
+          </button>
+        </div>
       </form>
   )
 }

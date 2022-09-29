@@ -1,0 +1,32 @@
+form *:not(div){
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+form{
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+form > *:not(:last-child){
+    margin-bottom: 0.5em;
+}
+.button-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+input, select, textarea{
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+}
+textarea{
+    min-width: 100%;
+    min-height: 4em;
+    max-height: 12em;
+}

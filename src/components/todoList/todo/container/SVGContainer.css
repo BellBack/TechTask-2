@@ -1,0 +1,28 @@
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 2.5em;
+    height: 2.5em;
+
+    background-color: lightblue;
+    border-radius: .5em;
+    padding: 0;
+    min-width: 2.5em;
+    min-height: 2.5em;
+}
+.operation{
+    min-width: 3em;
+    min-height: 3em;
+}
+.operation > *{
+    width: 2em;
+    height: 2em;
+    fill: #424242;
+}
+.icon-wrapper > *{
+    width: 1.5em;
+    height: 1.5em;
+    fill: #424242;
+}
