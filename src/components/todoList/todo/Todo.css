@@ -1,0 +1,10 @@
+li{
+    display: flex;
+    padding: .5em 1em;
+    background-color: lightblue;
+
+    border-radius: 0.5em;
+}
+li > *:not(:last-child){
+    margin-right: 1em;
+}
