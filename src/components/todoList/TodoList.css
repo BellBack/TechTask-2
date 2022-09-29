@@ -1,8 +1,0 @@
-ul {
-    max-height: 30em;
-    list-style: none;
-    overflow-y: auto;
-}
-ul > *:not(:last-child) {
-    margin-bottom: .5em;
-}
