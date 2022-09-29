@@ -31,7 +31,7 @@ const Todo = memo(({setFormVisible, toggleTodo, deleteTodo, todo, header}) => {
     return (
         <li style={{
           fontWeight: 'bold',
-          backgroundColor: 'lightblue'
+          backgroundColor: 'lightgrey'
         }}>
           <SVGContainer primary={true}/>
           <DataContainer className={'name'} data={'Name'}/>

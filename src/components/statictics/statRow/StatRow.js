@@ -18,7 +18,7 @@ const StatRow = ({obj, header}) => {
     return (
         <li style={{
           fontWeight: 'bold',
-          backgroundColor: 'lightblue'
+          backgroundColor: 'lightgrey'
         }}>
           <SVGContainer/>
           <DataContainer className={'text'} data={'Category'}
