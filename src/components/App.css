@@ -1,7 +1,46 @@
-.wrapper {
+.view{
+    min-height: 100vh;
+    position: relative;
+}
+section{
+    margin: 2em 4em;
+    padding: 1em;
+    background-color: rgb(189 192 192);
+    border-radius: .5em;
+}
+section > *{
+    margin: 1em;
+    padding: 1em;
+    background-color: rgb(230, 230, 231);
+    border-radius: .5em;
+}
+section > *:not(:last-child) {
+    margin-bottom: 2em;
+}
+.form-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.5);
+}
 
-    padding: 2em;
-    margin: 2em;
-    background-color: cadetblue;
-    border-radius: 1em;
+@media screen and (max-width: 800px) {
+    section {
+        margin: 1em 0;
+        padding: .5em;
+    }
+    section > * {
+        margin: .5em;
+        padding: .5em;
+    }
+    section > *:not(:last-child) {
+        margin-bottom: .5em;
+    }
 }
